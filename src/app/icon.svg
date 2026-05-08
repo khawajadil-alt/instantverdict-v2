@@ -1,0 +1,28 @@
+<svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background -->
+  <rect width="48" height="48" rx="12" fill="#0A0A0A"/>
+
+  <!-- Center pole -->
+  <rect x="23" y="10" width="2" height="26" rx="1" fill="white"/>
+
+  <!-- Base -->
+  <rect x="16" y="35" width="16" height="2.5" rx="1.25" fill="white"/>
+
+  <!-- Crossbar -->
+  <rect x="11" y="14" width="26" height="2" rx="1" fill="white"/>
+
+  <!-- Left chain -->
+  <rect x="11.5" y="16" width="1.5" height="7" rx="0.75" fill="white" opacity="0.6"/>
+
+  <!-- Right chain -->
+  <rect x="35" y="16" width="1.5" height="7" rx="0.75" fill="white" opacity="0.6"/>
+
+  <!-- Left pan -->
+  <path d="M8 23 Q12.25 27.5 16.5 23" stroke="white" stroke-width="1.8" stroke-linecap="round" fill="none"/>
+
+  <!-- Right pan -->
+  <path d="M31.5 23 Q35.75 27.5 40 23" stroke="white" stroke-width="1.8" stroke-linecap="round" fill="none"/>
+
+  <!-- Red accent dot -->
+  <circle cx="39" cy="9" r="4" fill="#FF3B30"/>
+</svg>
