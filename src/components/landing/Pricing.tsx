@@ -69,7 +69,6 @@ export default function Pricing() {
     <section id="pricing" className="py-24 border-b border-[#E5E7EB]" ref={ref}>
       <div className="max-w-5xl mx-auto px-4 sm:px-6">
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           className="mb-16"
         >
@@ -87,7 +86,6 @@ export default function Pricing() {
           {TIERS.map((tier, i) => (
             <motion.div
               key={tier.name}
-              initial={{ opacity: 0, y: 24 }}
               animate={isInView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.4, delay: i * 0.1 }}
               className="relative rounded-2xl p-7 flex flex-col"
@@ -168,7 +166,6 @@ export default function Pricing() {
         </div>
 
         <motion.p
-          initial={{ opacity: 0 }}
           animate={isInView ? { opacity: 1 } : {}}
           transition={{ delay: 0.5 }}
           className="text-center text-sm text-[#9CA3AF] mt-8"

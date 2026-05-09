@@ -26,7 +26,6 @@ export default function JudgeStep() {
 
   return (
     <motion.div
-      initial={{ opacity: 0, x: 40 }}
       animate={{ opacity: 1, x: 0 }}
       exit={{ opacity: 0, x: -40 }}
       transition={{ duration: 0.3 }}
@@ -42,7 +41,6 @@ export default function JudgeStep() {
         {JUDGES.map((judge, i) => (
           <motion.button
             key={judge.id}
-            initial={{ opacity: 0, y: 16 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.3, delay: i * 0.08 }}
             onClick={() => handleSelect(judge)}

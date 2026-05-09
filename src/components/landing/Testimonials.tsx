@@ -46,7 +46,6 @@ export default function Testimonials() {
     <section className="py-24 border-b border-[#E5E7EB]" ref={ref}>
       <div className="max-w-6xl mx-auto px-4 sm:px-6">
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           className="mb-16"
         >
@@ -70,7 +69,6 @@ export default function Testimonials() {
           {TESTIMONIALS.map((t, i) => (
             <motion.div
               key={i}
-              initial={{ opacity: 0, y: 24 }}
               animate={isInView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.4, delay: i * 0.1 }}
               className="rounded-2xl p-6 border border-[#E5E7EB] hover:border-[#0A0A0A] transition-all duration-200 flex flex-col gap-4"

@@ -22,7 +22,6 @@ export default function JudgeShowcase() {
     <section id="judges" className="py-24 border-b border-[#E5E7EB]" ref={ref}>
       <div className="max-w-6xl mx-auto px-4 sm:px-6">
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           className="mb-16"
         >
@@ -42,7 +41,6 @@ export default function JudgeShowcase() {
             {JUDGES.map((j, i) => (
               <motion.button
                 key={j.id}
-                initial={{ opacity: 0, x: -20 }}
                 animate={isInView ? { opacity: 1, x: 0 } : {}}
                 transition={{ delay: i * 0.1 }}
                 onClick={() => setActive(j)}
@@ -79,7 +77,6 @@ export default function JudgeShowcase() {
           {/* Active judge detail */}
           <motion.div
             key={active.id}
-            initial={{ opacity: 0, scale: 0.97 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.3 }}
             className="lg:col-span-3 rounded-2xl p-8 border-2 flex flex-col"

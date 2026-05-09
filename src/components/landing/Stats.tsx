@@ -42,7 +42,6 @@ export default function Stats() {
           {STATS.map((s, i) => (
             <motion.div
               key={s.label}
-              initial={{ opacity: 0 }}
               animate={isInView ? { opacity: 1 } : {}}
               transition={{ duration: 0.4, delay: i * 0.1 }}
               className="py-8 px-6 text-center"

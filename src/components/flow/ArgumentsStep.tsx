@@ -57,7 +57,6 @@ export default function ArgumentsStep() {
 
   return (
     <motion.div
-      initial={{ opacity: 0, x: 40 }}
       animate={{ opacity: 1, x: 0 }}
       exit={{ opacity: 0, x: -40 }}
       transition={{ duration: 0.3 }}
@@ -93,7 +92,6 @@ export default function ArgumentsStep() {
         {parties.map((party, i) => (
           <motion.div
             key={i}
-            initial={{ opacity: 0, y: 16 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: i * 0.08 }}
             className="rounded-2xl border-2 overflow-hidden bg-white"

@@ -34,7 +34,6 @@ export default function CategoryStep() {
 
   return (
     <motion.div
-      initial={{ opacity: 0, x: 40 }}
       animate={{ opacity: 1, x: 0 }}
       exit={{ opacity: 0, x: -40 }}
       transition={{ duration: 0.3 }}
@@ -54,7 +53,6 @@ export default function CategoryStep() {
         {CATEGORIES.map((cat, i) => (
           <motion.button
             key={cat.id}
-            initial={{ opacity: 0, y: 16 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.25, delay: i * 0.04 }}
             onClick={() => handleSelect(cat)}

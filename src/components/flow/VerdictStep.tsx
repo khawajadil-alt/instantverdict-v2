@@ -158,7 +158,7 @@ export default function VerdictStep() {
   }
 
   return (
-    <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 0.4 }}>
+    <motion.div animate={{ opacity: 1 }} transition={{ duration: 0.4 }}>
 
       {/* Meta chips */}
       <div className="flex flex-wrap items-center justify-center gap-2 mb-7">
