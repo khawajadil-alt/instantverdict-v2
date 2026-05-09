@@ -81,6 +81,7 @@ export const metadata: Metadata = {
         width: 1200,
         height: 630,
         alt: "InstantVerdict — AI Judge Settles Arguments",
+        type: "image/png",
       },
     ],
   },
@@ -115,6 +116,8 @@ export default function RootLayout({
     <html lang="en" className={`${space.variable} h-full`}>
       <head>
         <link rel="preconnect" href="https://flagcdn.com" />
+        <meta name="theme-color" content="#FF3B30" />
+        <meta name="color-scheme" content="light" />
       </head>
       <body className="min-h-full flex flex-col bg-white text-[#0A0A0A]">
         {children}

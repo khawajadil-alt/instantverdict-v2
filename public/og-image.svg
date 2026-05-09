@@ -1,0 +1,57 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0A0A0A"/>
+      <stop offset="100%" style="stop-color:#1A1A1A"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1200" height="630" fill="url(#bg)"/>
+
+  <!-- Red accent line top -->
+  <rect x="0" y="0" width="1200" height="6" fill="#FF3B30"/>
+
+  <!-- Grid dot pattern -->
+  <pattern id="dots" x="0" y="0" width="40" height="40" patternUnits="userSpaceOnUse">
+    <circle cx="2" cy="2" r="1.5" fill="rgba(255,255,255,0.04)"/>
+  </pattern>
+  <rect width="1200" height="630" fill="url(#dots)"/>
+
+  <!-- Logo icon -->
+  <rect x="80" y="80" width="64" height="64" rx="16" fill="#FF3B30"/>
+  <text x="112" y="124" font-family="Arial, sans-serif" font-size="36" font-weight="900" text-anchor="middle" fill="white">⚖</text>
+
+  <!-- Brand name -->
+  <text x="80" y="230" font-family="Arial Black, Arial, sans-serif" font-size="52" font-weight="900" fill="white" letter-spacing="-1">Instant</text>
+  <text x="80" y="230" font-family="Arial Black, Arial, sans-serif" font-size="52" font-weight="900" fill="transparent" letter-spacing="-1">        </text>
+  <text x="80" y="230" font-family="Arial Black, Arial, sans-serif" font-size="52" font-weight="900" fill="white" letter-spacing="-1">Instant<tspan fill="#FF3B30">Verdict</tspan></text>
+
+  <!-- Tagline -->
+  <text x="80" y="300" font-family="Arial, sans-serif" font-size="32" font-weight="400" fill="rgba(255,255,255,0.7)">AI Judge. Settle Any Argument. Instantly.</text>
+
+  <!-- Divider -->
+  <rect x="80" y="350" width="120" height="4" rx="2" fill="#FF3B30"/>
+
+  <!-- Feature pills -->
+  <rect x="80" y="390" width="200" height="44" rx="22" fill="rgba(255,255,255,0.08)" stroke="rgba(255,255,255,0.15)" stroke-width="1"/>
+  <text x="180" y="418" font-family="Arial, sans-serif" font-size="16" font-weight="700" text-anchor="middle" fill="white">⚡ Free to Start</text>
+
+  <rect x="300" y="390" width="220" height="44" rx="22" fill="rgba(255,255,255,0.08)" stroke="rgba(255,255,255,0.15)" stroke-width="1"/>
+  <text x="410" y="418" font-family="Arial, sans-serif" font-size="16" font-weight="700" text-anchor="middle" fill="white">🌍 140+ Countries</text>
+
+  <rect x="540" y="390" width="240" height="44" rx="22" fill="rgba(255,255,255,0.08)" stroke="rgba(255,255,255,0.15)" stroke-width="1"/>
+  <text x="660" y="418" font-family="Arial, sans-serif" font-size="16" font-weight="700" text-anchor="middle" fill="white">⚖️ Real Law Applied</text>
+
+  <!-- URL -->
+  <text x="80" y="565" font-family="Arial, sans-serif" font-size="22" font-weight="700" fill="rgba(255,255,255,0.4)">instantverdict.com</text>
+
+  <!-- Right side decorative verdict card -->
+  <rect x="780" y="140" width="340" height="280" rx="20" fill="rgba(255,255,255,0.05)" stroke="rgba(255,59,48,0.4)" stroke-width="1.5"/>
+  <rect x="780" y="140" width="340" height="56" rx="20" fill="rgba(255,59,48,0.15)"/>
+  <rect x="780" y="172" width="340" height="24" fill="rgba(255,59,48,0.15)"/>
+  <text x="950" y="178" font-family="Arial, sans-serif" font-size="13" font-weight="700" text-anchor="middle" fill="#FF3B30" letter-spacing="2">VERDICT</text>
+  <text x="950" y="260" font-family="Arial Black, Arial, sans-serif" font-size="42" font-weight="900" text-anchor="middle" fill="white">ALEX</text>
+  <text x="950" y="300" font-family="Arial, sans-serif" font-size="18" font-weight="700" text-anchor="middle" fill="#FF3B30">PREVAILS</text>
+  <text x="950" y="370" font-family="Arial, sans-serif" font-size="13" fill="rgba(255,255,255,0.4)" text-anchor="middle">Judge Roast presiding · UK jurisdiction</text>
+</svg>

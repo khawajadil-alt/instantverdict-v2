@@ -1,0 +1,33 @@
+# Security + caching headers for Cloudflare Pages
+
+# Static JS/CSS chunks — immutable, cache 1 year
+/_next/static/*
+  Cache-Control: public, max-age=31536000, immutable
+  X-Content-Type-Options: nosniff
+
+# All HTML pages — revalidate hourly
+/*
+  X-Frame-Options: DENY
+  X-Content-Type-Options: nosniff
+  Referrer-Policy: strict-origin-when-cross-origin
+  Strict-Transport-Security: max-age=31536000; includeSubDomains; preload
+  Permissions-Policy: camera=(), microphone=(), geolocation=(), payment=()
+  X-XSS-Protection: 1; mode=block
+  Cache-Control: public, max-age=3600, must-revalidate
+
+# SEO files — cache longer
+/sitemap.xml
+  Cache-Control: public, max-age=86400, must-revalidate
+  Content-Type: application/xml; charset=utf-8
+
+/robots.txt
+  Cache-Control: public, max-age=86400, must-revalidate
+
+# OG images
+/og-image.png
+  Cache-Control: public, max-age=604800, must-revalidate
+  Content-Type: image/png
+
+/og-image.svg
+  Cache-Control: public, max-age=604800, must-revalidate
+  Content-Type: image/svg+xml
