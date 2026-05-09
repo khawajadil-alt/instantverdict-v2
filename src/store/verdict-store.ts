@@ -68,6 +68,13 @@ export const useVerdictStore = create<AppState>()(
     {
       name: "iv-storage",
       partialize: (state) => ({
+        step: state.step,
+        country: state.country,
+        category: state.category,
+        judge: state.judge,
+        parties: state.parties,
+        verdict: state.verdict,
+        isUnlocked: state.isUnlocked,
         weeklyCount: state.weeklyCount,
         weekNumber: state.weekNumber,
       }),

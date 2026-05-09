@@ -260,6 +260,10 @@ export default function VerdictStep() {
                   Get the complete ruling with legal citations, case law references, and the binding court order.
                 </p>
                 <button
+                  onClick={() => {
+                    const link = process.env.NEXT_PUBLIC_STRIPE_VERDICT_LINK;
+                    if (link) window.location.href = link;
+                  }}
                   className="w-full max-w-xs h-12 rounded-xl font-black text-base text-white mb-4 transition-all hover:-translate-y-0.5 hover:shadow-lg active:translate-y-0"
                   style={{ background: "#FF3B30" }}
                 >

@@ -1,5 +1,6 @@
 "use client";
 
+import { useEffect } from "react";
 import { AnimatePresence } from "framer-motion";
 import Link from "next/link";
 import Logo from "@/components/ui/Logo";
@@ -16,6 +17,15 @@ const FLOW_STEPS = ["country", "category", "judge", "arguments"];
 
 export default function CasePage() {
   const step = useVerdictStore((s) => s.step);
+  const setUnlocked = useVerdictStore((s) => s.setUnlocked);
+
+  useEffect(() => {
+    const params = new URLSearchParams(window.location.search);
+    if (params.get("payment") === "success") {
+      setUnlocked(true);
+      window.history.replaceState({}, "", window.location.pathname);
+    }
+  }, [setUnlocked]);
 
   return (
     <div className="min-h-screen flex flex-col bg-white">
