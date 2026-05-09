@@ -14,6 +14,7 @@
   Permissions-Policy: camera=(), microphone=(), geolocation=(), payment=()
   X-XSS-Protection: 1; mode=block
   Cache-Control: public, max-age=3600, must-revalidate
+  Content-Security-Policy: default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data: https://flagcdn.com; font-src 'self' data:; connect-src 'self' https://argument-settler-api.khawaj-adil.workers.dev; object-src 'none'; media-src 'none'; frame-src 'none'; frame-ancestors 'none'; base-uri 'self'; form-action 'self'; upgrade-insecure-requests;
 
 # SEO files — cache longer
 /sitemap.xml
