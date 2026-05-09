@@ -4,6 +4,7 @@ import Image from "next/image";
 import Navbar from "@/components/landing/Navbar";
 import Footer from "@/components/landing/Footer";
 import FaqAccordion from "@/components/ui/FaqAccordion";
+import { US_STATES, AU_STATES, CA_PROVINCES, UK_REGIONS } from "@/lib/location-data";
 
 export const dynamic = "force-static";
 
@@ -594,6 +595,10 @@ const COUNTRY_PAGES: Record<string, CountryData> = {
       },
     ],
   },
+  ...US_STATES,
+  ...AU_STATES,
+  ...CA_PROVINCES,
+  ...UK_REGIONS,
 };
 
 const ALL_SLUGS = Object.keys(COUNTRY_PAGES);
