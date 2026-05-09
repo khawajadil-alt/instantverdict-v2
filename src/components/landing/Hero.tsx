@@ -64,7 +64,6 @@ export default function Hero() {
         {/* Badge */}
         <div className="max-w-6xl mx-auto px-4 sm:px-6 w-full">
           <motion.div
-            initial={{ opacity: 0, y: 16 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.4 }}
             className="flex items-center gap-4 mb-8"
@@ -81,7 +80,6 @@ export default function Hero() {
 
           {/* Main headline */}
           <motion.h1
-            initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.45, delay: 0.1 }}
             className="text-5xl sm:text-7xl lg:text-[88px] font-bold text-white leading-[1.0] tracking-tight mb-6"
@@ -92,7 +90,6 @@ export default function Hero() {
           </motion.h1>
 
           <motion.p
-            initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.45, delay: 0.2 }}
             className="text-[#9CA3AF] text-lg sm:text-xl max-w-xl mb-10 leading-relaxed"
@@ -102,7 +99,6 @@ export default function Hero() {
           </motion.p>
 
           <motion.div
-            initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.45, delay: 0.3 }}
             className="flex flex-wrap gap-4 mb-16"
@@ -144,7 +140,6 @@ export default function Hero() {
             {SAMPLE_VERDICTS.map((v, i) => (
               <motion.div
                 key={i}
-                initial={{ opacity: 0, y: 30 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: 0.4 + i * 0.1 }}
                 className="bg-white rounded-2xl p-5 border border-[#E5E7EB] hover:border-[#0A0A0A] hover:-translate-y-1 transition-all duration-200 cursor-default"
