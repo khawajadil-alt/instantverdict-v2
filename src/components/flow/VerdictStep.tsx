@@ -7,6 +7,8 @@ import { VALID_PROMO_CODES } from "@/lib/utils";
 import FlagImg from "@/components/ui/FlagImg";
 import Link from "next/link";
 
+const PAYPAL_CLIENT_ID = "AeezeY9FIQ6FWoBKq3T3oSMoHheHq3TKPVsAXaGKO5T_AiCuiM_pm1Hg9549Saa4CfHalUQSfVGADqys";
+
 const CONFETTI_COLORS = ["#FF3B30", "#FFD700", "#0EA5E9", "#8B5CF6", "#16A34A", "#F97316"];
 
 const PARTICLE_DATA = Array.from({ length: 28 }, (_, i) => ({
@@ -48,6 +50,8 @@ export default function VerdictStep() {
   const [copied, setCopied] = useState(false);
   const [revealed, setRevealed] = useState(false);
   const confettiShownRef = useRef(false);
+  const paypalContainerRef = useRef<HTMLDivElement>(null);
+  const paypalInitRef = useRef(false);
 
   useEffect(() => {
     const t1 = setTimeout(() => setRevealed(true), 300);
@@ -60,6 +64,52 @@ export default function VerdictStep() {
     }, 600);
     return () => { clearTimeout(t1); clearTimeout(t2); };
   }, [verdict]);
+
+  useEffect(() => {
+    if (isUnlocked || paypalInitRef.current) return;
+
+    function renderButtons() {
+      const container = paypalContainerRef.current;
+      if (!container || paypalInitRef.current) return;
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
+      const pp = (window as any).paypal;
+      if (!pp) return;
+      paypalInitRef.current = true;
+      container.innerHTML = "";
+      pp.Buttons({
+        style: { layout: "vertical", color: "gold", shape: "rect", label: "pay", height: 45 },
+        // eslint-disable-next-line @typescript-eslint/no-explicit-any
+        createOrder: (_data: unknown, actions: any) =>
+          actions.order.create({
+            purchase_units: [{
+              amount: { value: "1.00", currency_code: "USD" },
+              description: "InstantVerdict — Full Verdict Unlock",
+            }],
+          }),
+        // eslint-disable-next-line @typescript-eslint/no-explicit-any
+        onApprove: (_data: unknown, actions: any) =>
+          actions.order.capture().then(() => {
+            setUnlocked(true);
+            if (!confettiShownRef.current) {
+              setShowConfetti(true);
+              confettiShownRef.current = true;
+              setTimeout(() => setShowConfetti(false), 2000);
+            }
+          }),
+        onError: (err: unknown) => console.error("PayPal error:", err),
+      }).render(container);
+    }
+
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    if ((window as any).paypal) {
+      renderButtons();
+    } else {
+      const script = document.createElement("script");
+      script.src = `https://www.paypal.com/sdk/js?client-id=${PAYPAL_CLIENT_ID}&currency=USD&intent=capture`;
+      script.onload = renderButtons;
+      document.head.appendChild(script);
+    }
+  }, [isUnlocked, setUnlocked]);
 
   if (!verdict) return null;
 
@@ -259,16 +309,12 @@ export default function VerdictStep() {
                 <p className="text-sm text-[#6B7280] mb-5 max-w-xs leading-relaxed">
                   Get the complete ruling with legal citations, case law references, and the binding court order.
                 </p>
-                <button
-                  onClick={() => {
-                    const link = process.env.NEXT_PUBLIC_STRIPE_VERDICT_LINK;
-                    if (link) window.location.href = link;
-                  }}
-                  className="w-full max-w-xs h-12 rounded-xl font-black text-base text-white mb-4 transition-all hover:-translate-y-0.5 hover:shadow-lg active:translate-y-0"
-                  style={{ background: "#FF3B30" }}
-                >
-                  🔓 Unlock Full Verdict — $1
-                </button>
+                <div className="w-full max-w-xs mx-auto mb-4">
+                  <p className="text-xs font-bold text-center text-[#6B7280] mb-2">
+                    🔓 Unlock Full Verdict — $1 one-time
+                  </p>
+                  <div ref={paypalContainerRef} />
+                </div>
                 <div className="flex gap-2 w-full max-w-xs">
                   <input
                     type="text"

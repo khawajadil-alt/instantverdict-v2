@@ -5,9 +5,6 @@ import { useRef } from "react";
 import Link from "next/link";
 import Button from "@/components/ui/Button";
 
-const VERDICT_LINK = process.env.NEXT_PUBLIC_STRIPE_VERDICT_LINK || "/case";
-const PRO_LINK = process.env.NEXT_PUBLIC_STRIPE_PRO_LINK || "/case";
-
 const TIERS = [
   {
     name: "Free",
@@ -22,10 +19,8 @@ const TIERS = [
     ],
     excluded: ["Full detailed verdict", "PDF download", "Up to 6 parties"],
     cta: "Start Free",
-    href: "/case",
     variant: "outline" as const,
     highlight: false,
-    external: false,
   },
   {
     name: "Per Verdict",
@@ -42,10 +37,8 @@ const TIERS = [
     ],
     excluded: ["Up to 6 parties"],
     cta: "Get Full Verdict",
-    href: VERDICT_LINK,
     variant: "red" as const,
     highlight: true,
-    external: VERDICT_LINK !== "/case",
   },
   {
     name: "Pro",
@@ -63,10 +56,8 @@ const TIERS = [
     ],
     excluded: [],
     cta: "Go Pro",
-    href: PRO_LINK,
     variant: "primary" as const,
     highlight: false,
-    external: PRO_LINK !== "/case",
   },
 ];
 
@@ -167,19 +158,11 @@ export default function Pricing() {
                 ))}
               </ul>
 
-              {tier.external ? (
-                <a href={tier.href} className="w-full block">
-                  <Button variant={tier.variant} size="lg" className="w-full">
-                    {tier.cta}
-                  </Button>
-                </a>
-              ) : (
-                <Link href={tier.href} className="w-full">
-                  <Button variant={tier.variant} size="lg" className="w-full">
-                    {tier.cta}
-                  </Button>
-                </Link>
-              )}
+              <Link href="/case" className="w-full">
+                <Button variant={tier.variant} size="lg" className="w-full">
+                  {tier.cta}
+                </Button>
+              </Link>
             </motion.div>
           ))}
         </div>

@@ -14,7 +14,7 @@
   Permissions-Policy: camera=(), microphone=(), geolocation=(), payment=()
   X-XSS-Protection: 1; mode=block
   Cache-Control: public, max-age=3600, must-revalidate
-  Content-Security-Policy: default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data: https://flagcdn.com; font-src 'self' data:; connect-src 'self' https://argument-settler-api.khawaj-adil.workers.dev; object-src 'none'; media-src 'none'; frame-src 'none'; frame-ancestors 'none'; base-uri 'self'; form-action 'self'; upgrade-insecure-requests;
+  Content-Security-Policy: default-src 'self'; script-src 'self' https://www.paypal.com https://www.paypalobjects.com; style-src 'self' 'unsafe-inline' https://www.paypalobjects.com; img-src 'self' data: https://flagcdn.com https://www.paypalobjects.com https://t.paypal.com; font-src 'self' data: https://www.paypalobjects.com; connect-src 'self' https://argument-settler-api.khawaj-adil.workers.dev https://*.paypal.com; frame-src https://www.paypal.com https://www.sandbox.paypal.com; object-src 'none'; media-src 'none'; frame-ancestors 'none'; base-uri 'self'; form-action 'self' https://www.paypal.com; upgrade-insecure-requests;
 
 # SEO files — cache longer
 /sitemap.xml
